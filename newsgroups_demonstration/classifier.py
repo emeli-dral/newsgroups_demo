@@ -19,7 +19,7 @@ class Classifier(object):
             vectorized = self.vectorizer.transform([text])
             return self.model.predict(vectorized)[0] 
         except:
-            print "prediction error"
+            print("prediction error")
             return None 
 
     def get_result_message(self, text):
