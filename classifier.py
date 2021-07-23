@@ -1,12 +1,12 @@
-from sklearn.externals import joblib
+import joblib
 from sklearn.datasets import fetch_20newsgroups
 
 
 class Classifier(object):
     def __init__(self):
-        self.vectorizer = joblib.load("news_vectorizer_dump.pkl")
-        self.model = joblib.load("news_model_dump.pkl")
-        self.target_names = fetch_20newsgroups(subset='test').target_names
+        self.vectorizer = joblib.load("news_vectorizer_dump_tfidf.pkl")
+        self.model = joblib.load("news_model_dump_rf.pkl")
+        self.target_names = fetch_20newsgroups(subset = 'test').target_names
     
     def get_name_by_label(self, label):
         try:

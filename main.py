@@ -11,8 +11,8 @@ print("Classifier is successfully loaded")
 print(time.time() - start_time, "seconds")
 
 
-@app.route("/news-demo", methods=["POST", "GET"])
-def index_page(text="", prediction_message=""):
+@app.route("/news-demo", methods = ["POST", "GET"])
+def index_page(text = "", prediction_message = ""):
     if request.method == "POST":
         text = request.form["text"]
 
@@ -30,8 +30,8 @@ def index_page(text="", prediction_message=""):
 
         logfile.close()
 
-    return render_template('simple_page.html', text=text, prediction_message=prediction_message)
+    return render_template('simple_page.html', text = text, prediction_message = prediction_message)
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=80, debug=False)
+    app.run(host = '0.0.0.0', port = 80, debug = True)
